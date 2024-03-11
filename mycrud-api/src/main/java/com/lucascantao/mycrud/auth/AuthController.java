@@ -26,9 +26,7 @@ import com.lucascantao.mycrud.models.dto.LoginDTO;
 import com.lucascantao.mycrud.models.dto.RegisterDTO;
 import com.lucascantao.mycrud.models.dto.ResponseDTO;
 import com.lucascantao.mycrud.repository.UserRepository;
-import com.lucascantao.mycrud.service.UsuarioLoginService;
 
-import jakarta.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("v1/auth")
