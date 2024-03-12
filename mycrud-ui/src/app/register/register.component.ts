@@ -1,40 +1,39 @@
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { UsuarioService } from '../usuario.service';
-import { login } from '../login';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { register } from '../register';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-register',
   standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.css'
 })
-export class LoginComponent {
-
+export class RegisterComponent {
+  
   constructor(
     private fb: FormBuilder, 
     private usuarioService:UsuarioService, 
     private authService:AuthService,
     private router:Router) {}
 
-  loginForm = this.fb.group({
+  registerForm = this.fb.group({
     username: '',
+    email: '',
     password: ''
   })
 
   onSubmit() {
-    const login: login = {
-      username: this.loginForm.value.username!,
-      password: this.loginForm.value.password!,
+    const register: register = {
+      username: this.registerForm.value.username!,
+      email: this.registerForm.value.email!,
+      password: this.registerForm.value.password!,
     }
-    this.usuarioService.login(login).then((response) => {
-      // this.authService.currentSig.set(response);
-      localStorage.setItem('token',response.accessToken)
-      this.router.navigateByUrl('/formulario')
+    this.usuarioService.register(register).then((response) => {
+      this.router.navigateByUrl('/login')
     });
   }
-
 }

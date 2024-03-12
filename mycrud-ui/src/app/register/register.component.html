@@ -1,9 +1,13 @@
 <div class="w-full pt-6 flex flex-col items-center justify-center">
-    <form action="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="bg-white max-w-xs shadow-md rounded px-8 py-6 mb-6">
+    <form action="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="bg-white max-w-xs shadow-md rounded px-8 py-6 mb-6">
         <div>
             <label class="block text-gray-700 text-sm mb-2">Usuario</label>
             <div class="mb-4 mr-2">
                 <input type="text" class="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" formControlName="username">
+            </div>
+            <label class="block text-gray-700 text-sm mb-2">Email</label>
+            <div class="mb-4 mr-2">
+                <input type="text" class="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" formControlName="email">
             </div>
             <label class="block text-gray-700 text-sm mb-2">Senha</label>
             <div class="mb-4 mr-2">
@@ -11,9 +15,9 @@
             </div>            
         </div>
         <div>
-            <button type="submit"  class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Entrar</button>
+            <button type="submit"  class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Registrar</button>
         </div>
 
     </form>
-    <p>ou <a href="/#/register" class="text-green-500">registrar</a></p>
+    <p>ou <a href="/#/login" class="text-green-500">Entrar com conta</a></p>
 </div>

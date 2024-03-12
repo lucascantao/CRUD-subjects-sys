@@ -15,7 +15,7 @@ import {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAnimations(),
-    provideHttpClient(),
+    provideHttpClient(withInterceptors([authInterceptor])),
     provideRouter(routes,
         withPreloading(PreloadAllModules),
         withInMemoryScrolling({scrollPositionRestoration: 'enabled'}),

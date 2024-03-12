@@ -63,7 +63,7 @@ public class AuthController {
         }
 
         UsuarioModel user = new UsuarioModel();
-        user.setName(register.getName());
+        user.setName(register.getUsername());
         user.setEmail(register.getEmail());
         user.setPassword(passwordEncoder.encode(register.getPassword()));
         user = repository.save(user);
