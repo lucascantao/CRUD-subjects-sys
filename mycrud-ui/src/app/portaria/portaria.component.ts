@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { Controle } from '../controle';
-import { ControleService } from '../controle.service';
+import { Controle } from '../model/controle';
+import { ControleService } from '../service/controle.service';
 import { ActivatedRoute } from '@angular/router';
 import { ControleDTO } from '../dto/controle.dto';
 

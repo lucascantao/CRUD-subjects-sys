@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { FormComponent } from './form/form.component';
 import { SearchComponent } from './search/search.component';
 import { LoginComponent } from './login/login.component';
-import { authGuard } from './auth.guard';
+import { authGuard } from './utils/auth.guard';
 import { PortariaComponent } from './portaria/portaria.component';
 import { RegisterComponent } from './register/register.component';
 

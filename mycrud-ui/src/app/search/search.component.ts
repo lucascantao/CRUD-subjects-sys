@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ControleService } from '../controle.service';
+import { ControleService } from '../service/controle.service';
 import { HttpClientModule } from '@angular/common/http';
-import { Controle } from '../controle';
+import { Controle } from '../model/controle';
 import { NgFor, NgIf } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { PortariaComponent } from '../portaria/portaria.component';

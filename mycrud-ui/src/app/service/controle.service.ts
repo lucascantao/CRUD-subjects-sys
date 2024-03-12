@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Controle } from './controle';
-import { environment } from '../environments/environment';
-import { ControleDTO } from './dto/controle.dto';
+import { Controle } from '../model/controle';
+import { environment } from '../../environments/environment';
+import { ControleDTO } from '../dto/controle.dto';
 
 @Injectable({
   providedIn: 'root'

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { UsuarioService } from '../usuario.service';
-import { login } from '../login';
-import { AuthService } from '../auth.service';
+import { UsuarioService } from '../service/usuario.service';
+import { login } from '../model/login';
+import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
 
 @Component({

@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { login } from './login';
-import { Usuario } from './usuario';
+import { login } from '../model/login';
+import { Usuario } from '../model/usuario';
 import { Router } from '@angular/router';
-import { environment } from '../environments/environment';
-import { register } from './register';
+import { environment } from '../../environments/environment';
+import { register } from '../model/register';
 
 const domain = environment.serverUrl;
 
