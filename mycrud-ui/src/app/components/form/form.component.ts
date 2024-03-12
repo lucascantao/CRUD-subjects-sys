@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Controle } from '../model/controle';
-import { ControleService } from '../service/controle.service';
+import { Controle } from '../../model/controle';
+import { ControleService } from '../../service/controle.service';
 import { NgIf } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { AuthService } from '../service/auth.service';
+import { AuthService } from '../../service/auth.service';
 import { HttpClient } from '@angular/common/http';
-import { UsuarioService } from '../service/usuario.service';
+import { UsuarioService } from '../../service/usuario.service';
 
 @Component({
   selector: 'app-form',

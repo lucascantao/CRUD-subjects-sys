@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { ControleService } from '../service/controle.service';
+import { ControleService } from '../../service/controle.service';
 import { HttpClientModule } from '@angular/common/http';
-import { Controle } from '../model/controle';
+import { Controle } from '../../model/controle';
 import { NgFor, NgIf } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { PortariaComponent } from '../portaria/portaria.component';
 import { Router } from '@angular/router';
-import { ControleDTO } from '../dto/controle.dto';
+import { ControleDTO } from '../../dto/controle.dto';
 
 @Component({
   selector: 'app-search',

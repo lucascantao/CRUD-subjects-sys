@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { UsuarioService } from '../service/usuario.service';
-import { AuthService } from '../service/auth.service';
+import { UsuarioService } from '../../service/usuario.service';
+import { AuthService } from '../../service/auth.service';
 import { Router } from '@angular/router';
-import { register } from '../model/register';
+import { register } from '../../model/register';
 
 @Component({
   selector: 'app-register',
