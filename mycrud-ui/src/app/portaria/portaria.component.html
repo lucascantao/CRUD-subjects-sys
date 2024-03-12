@@ -1,0 +1,71 @@
+<div *ngIf="controle != null" class="w-full border-b-2 mb-1 px-4 py-2">
+    <div class="mb-2">
+        <p class="text-sm font-thin text-gray-500 mr-2">n° portaria</p>
+        <p class="">{{controle.portaria}}</p>
+    </div>
+    <div class="mb-2">
+        <div class="flex text-sm font-thin">
+            <p class="text-gray-500 mr-2">assunto</p>
+        </div>
+        <p *ngIf="!edit" class="">{{controle.assunto}}</p>
+        <textarea *ngIf="edit" #fieldAssunto type="text" (input)="setAssunto(fieldAssunto.value)" [value]="controle.assunto" class="w-full shadow border rounded py-2 px-3 mt-2 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+    </div>
+    <div class="mb-2">
+        <div class="flex text-sm font-thin">
+            <p class="text-gray-500 mr-2">destino</p>
+        </div>
+        <p *ngIf="!edit" class="">{{controle.destino}}</p>
+        <input *ngIf="edit" type="text" [value]="controle.destino" class="w-full shadow border rounded py-2 px-3 mt-2 leading-tight cursor-not-allowed bg-gray-100 text-gray-500 focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-2">
+        <div class="flex text-sm font-thin">
+            <p class="text-gray-500 mr-2">processoDoc</p>
+        </div>
+        <p *ngIf="!edit" class="">{{controle.processoDoc}}</p>
+        <input *ngIf="edit" type="text" [value]="controle.processoDoc" class="w-full shadow border rounded py-2 px-3 mt-2 leading-tight cursor-not-allowed bg-gray-100 text-gray-500 focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-2">
+        <div class="flex text-sm font-thin">
+            <p class="text-gray-500 mr-2">observacoes</p>
+        </div>
+        <p *ngIf="!edit" class="">{{controle.observacoes}}</p>
+        <textarea *ngIf="edit" type="text" [value]="controle.observacoes" class="w-full shadow border rounded py-2 px-3 mt-2 leading-tight cursor-not-allowed bg-gray-100 text-gray-500 focus:outline-none focus:shadow-outline"></textarea>
+    </div>
+    <div class="mb-2">
+        <div class="flex text-sm font-thin">
+            <p class="text-gray-500 mr-2">ano</p>
+        </div>
+        <p *ngIf="!edit" class="">{{controle.ano}}</p>
+        <input *ngIf="edit" type="text" [value]="controle.ano" class="w-full shadow border rounded py-2 px-3 mt-2 leading-tight cursor-not-allowed bg-gray-100 text-gray-500 focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-2">
+        <div class="flex text-sm font-thin">
+            <p class="text-gray-500 mr-2">data</p>
+        </div>
+        <p *ngIf="!edit" class="">{{DDmmYYYY(controle.data)}}</p>
+        <input *ngIf="edit" type="date" [value]="controle.data" class="w-full shadow border rounded py-2 px-3 mt-2 leading-tight cursor-not-allowed bg-gray-100 text-gray-500 focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-2">
+        <div class="flex text-sm font-thin">
+            <p class="text-gray-500 mr-2">Responsável</p>
+        </div>
+        <p *ngIf="!edit" class="">{{controle.nomeUsuario}}</p>
+        <input *ngIf="edit" type="text" [value]="controle.nomeUsuario" class="w-full shadow border rounded py-2 px-3 mt-2 leading-tight cursor-not-allowed bg-gray-100 text-gray-500 focus:outline-none focus:shadow-outline">
+    </div>
+   
+          
+    <!-- <p class="text-gray-500 flex align-middle">
+        <span class="font-bold flex items-center mr-2">
+            <svg class="w-[16px] h-[16px] text-blue-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 18">
+                <path d="M7 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm2 1H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"/>
+            </svg>
+        </span> 
+    {{controle.nomeUsuario}}</p> -->
+
+    <div>
+        <button *ngIf="!edit" (click)="toogleEdit()" class="bg-blue-500 hover:bg-blue-600 rounded-sm px-2 text-white">Editar</button>
+        <button *ngIf="edit" (click)="toogleEdit()" class="bg-red-400 hover:bg-red-500 rounded-sm px-2 text-white mr-2">Cancelar</button>
+        <button *ngIf="edit" (click)="saveControle()" class="bg-green-500 hover:bg-green-600 rounded-sm px-2 text-white">Salvar</button>
+    </div>
+      
+</div>

@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+
+<!-- BASIC FORM -->
+
+<div class="w-full flex justify-center">
+
+    <form action="form" [formGroup]="controleForm" (ngSubmit)="onSubmit()" class="bg-white shadow-md text-gray-700 rounded px-8 py-6 mb-4">
+        
+        <div class="mb-4">
+            <label class="block text-sm mb-2">Assunto *</label>
+            <textarea class="shadow border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline resize-none overflow-hidden" #myLabel [style.height]="getHeight(myLabel)" formControlName="assunto"></textarea>
+        </div>
+        <div class="flex justify-center mb-4">
+            <div class="mr-4 w-full">
+                <label class="block text-sm mb-2">Data *</label>
+                <input type="date" class="shadow border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" formControlName="data">
+            </div>
+            <div class="mr-4 w-full">
+                <label class="block text-sm mb-2">Início</label>
+                <input type="date" class="shadow border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" formControlName="inicio">
+            </div>
+            <div class="w-full">
+                <label class="block text-sm mb-2">Término</label>
+                <input type="date" class="shadow border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" formControlName="termino">
+            </div>
+        </div>
+        
+        <div class="flex mb-4">
+            <div class=>
+                <label class="block text-sm mb-2">Ano *</label>
+                <p class="shadow border rounded w-full py-2 px-3 leading-tight cursor-not-allowed bg-gray-100 text-gray-500 focus:outline-none focus:shadow-outline">{{controleForm.value.ano}}</p>
+            </div>
+            <div class="ml-4 w-full">
+                <label class="block text-sm mb-2">Nome Usuario *</label>
+                <p class="shadow border rounded w-full py-2 px-3 leading-tight cursor-not-allowed bg-gray-100 text-gray-500 focus:outline-none focus:shadow-outline">{{controleForm.value.nomeUsuario}}</p>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm mb-2">Destino</label>
+            <input type="text" class="shadow border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" formControlName="destino">
+        </div>
+        <div class="mb-4">
+            <label class="block text-sm mb-2">Processo *</label>
+            <input type="text" class="shadow border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" formControlName="processoDoc">
+        </div>
+        <div class="mb-4">
+            <label class="block text-sm mb-2">Observações</label>
+            <textarea class="shadow form-textarea border rounded p-2 focus:outline-none focus:shadow-outline" cols="100" rows="4" formControlName="observacoes"></textarea>
+        </div>
+
+        <div>
+            <button *ngIf="!sent" type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Salvar</button>
+            <button *ngIf="sent" type="submit" disabled class="bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sucesso</button>
+        </div>
+        <p *ngIf="controleForm.invalid && (controleForm.dirty)" class="text-red-500 text-sm mt-2">preencha todos os campos obrigatórios (*)</p>
+    </form>
+
+</div>
