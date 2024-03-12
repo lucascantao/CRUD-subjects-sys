@@ -20,7 +20,7 @@
     <div class="bg-white w-1/2">
 
         <div *ngFor="let controle of controles">
-            <a href="/portaria/{{controle.id}}">
+            <a href="/#/portaria/{{controle.id}}">
                 <div class="flex hover:bg-slate-100 py-2 px-4 border-b-2">
                     <p class="text-gray-400 mr-2">n° {{controle.portaria}}</p>
                     <p>{{controle.assunto.substring(0,60)}}</p>
