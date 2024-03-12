@@ -10,7 +10,7 @@ import { ControleDTO } from './dto/controle.dto';
 })
 export class ControleService {
   
-  private URL = 'v1/controlePortaria';
+  private URL = 'v1/subject';
   private domain = environment.serverUrl;
   
   constructor(private http: HttpClient) { }
@@ -27,7 +27,7 @@ export class ControleService {
   }
 
   addControle(controle: Controle) {
-    return this.http.post<Controle>(`${this.domain}${this.URL}/addControle`, controle, {observe: "body"});
+    return this.http.post<Controle>(`${this.domain}${this.URL}`, controle, {observe: "body"});
   }
 
   saveControle(controle: ControleDTO) {
