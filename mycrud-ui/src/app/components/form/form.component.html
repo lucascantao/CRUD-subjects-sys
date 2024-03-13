@@ -7,29 +7,21 @@
     <form action="form" [formGroup]="controleForm" (ngSubmit)="onSubmit()" class="bg-white shadow-md text-gray-700 rounded px-8 py-6 mb-4">
         
         <div class="mb-4">
-            <label class="block text-sm mb-2">Assunto *</label>
-            <textarea class="shadow border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline resize-none overflow-hidden" #myLabel [style.height]="getHeight(myLabel)" formControlName="assunto"></textarea>
+            <label class="ml-6 text-sm text-gray-400 mb-2">Assunto *</label>
+            <input type="text" class="border rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-green-400 resize-none overflow-hidden" formControlName="assunto">
         </div>
         <div class="mb-4">
-            <label class="block text-sm mb-2">Categoria *</label>
-            <textarea class="shadow border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline resize-none overflow-hidden" formControlName="category"></textarea>
-        </div>
-        <div class="mr-4 w-full">
-            <label class="block text-sm mb-2">Data *</label>
-            <input type="date" class="shadow border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" formControlName="data">
-        </div>
-   
-        <div class="ml-4 w-full">
-            <label class="block text-sm mb-2">Nome Usuario *</label>
-            <p class="shadow border rounded w-full py-2 px-3 leading-tight cursor-not-allowed bg-gray-100 text-gray-500 focus:outline-none focus:shadow-outline">{{controleForm.value.nomeUsuario}}</p>
+            <label class="ml-6 text-sm text-gray-400 mb-2">Categoria *</label>
+            <input type="text" class="border rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-green-400 resize-none overflow-hidden" formControlName="category">
         </div>
         <div class="mb-4">
-            <label class="block text-sm mb-2">Descrição</label>
-            <textarea class="shadow form-textarea border rounded p-2 focus:outline-none focus:shadow-outline" cols="100" rows="4" formControlName="description"></textarea>
+            <label class="ml-6 text-sm text-gray-400 mb-2">Descrição</label>
+            <br>
+            <textarea class="border rounded p-2 focus:outline-none focus:shadow-outline focus:border-green-400" cols="100" rows="4" formControlName="description"></textarea>
         </div>
         <div>
-            <button *ngIf="!sent" type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Salvar</button>
-            <button *ngIf="sent" type="submit" disabled class="bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sucesso</button>
+            <button *ngIf="!sent" type="submit" class="border border-green-500 hover:bg-green-500 hover:text-white text-green-500 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Salvar</button>
+            <button *ngIf="sent" type="submit" disabled class="border border-blue-500 hover:bg-blue-500 hover:text-white text-blue-500 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sucesso</button>
         </div>
         <p *ngIf="controleForm.invalid && (controleForm.dirty)" class="text-red-500 text-sm mt-2">preencha todos os campos obrigatórios (*)</p>
     </form>
