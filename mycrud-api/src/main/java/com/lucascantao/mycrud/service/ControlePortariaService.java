@@ -32,8 +32,8 @@ public class ControlePortariaService{
         return model.get();
     }
 
-    public Page<SubjectModel> getListAno(String ano, int page){
-        Page<SubjectModel> list = repo.findAllByAnoOrderByIdDesc(ano, PageRequest.of(page, 10));
+    public Page<SubjectModel> getListCategory(String category, int page){
+        Page<SubjectModel> list = repo.findAllByCategoryOrderByIdDesc(category, PageRequest.of(page, 10));
         if(list.isEmpty()){
             return Page.empty();
         }

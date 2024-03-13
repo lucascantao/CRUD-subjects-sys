@@ -11,23 +11,19 @@ import java.time.LocalDate;
 @Getter @Setter
 public class SubjectDTO {
     private LocalDate data;
-    private String ano;
-    private String assunto;
-    private String destino;
     private String nomeUsuario;
-    private String processoDoc;
-    private String observacoes;
+    private String category;
+    private String assunto;
+    private String description;
 
 
     public SubjectModel convertToModel(SubjectDTO dto) {
         SubjectModel model = new SubjectModel();
         model.setData(dto.getData());
-        model.setAno(dto.getAno());
         model.setNomeUsuario(dto.getNomeUsuario());
-        model.setDestino(dto.getDestino());
-        model.setProcessoDoc(dto.getProcessoDoc());
+        model.setCategory(dto.getCategory());
         model.setAssunto(dto.getAssunto());
-        model.setObservacoes(dto.getObservacoes());
+        model.setDescription(dto.getDescription());
         return model;
     }
 }

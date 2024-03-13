@@ -14,9 +14,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SubjectRepository extends JpaRepository<SubjectModel, Integer> {
 
-    @Query(value = "select max(tcp.id) " +
-            "from SubjectModel tcp " +
-            "where tcp.ano = :ano ")
-    String getSubjectModelBy(@Param("ano") String ano );
-    Page<SubjectModel> findAllByAnoOrderByIdDesc(String ano, Pageable pageable);
+    // @Query(value = "select max(tcp.id) " +
+    //         "from SubjectModel tcp " +
+    //         "where tcp.ano = :ano ")
+    // String getSubjectModelBy(@Param("ano") String ano );
+    Page<SubjectModel> findAllByCategoryOrderByIdDesc(String category, Pageable pageable);
 }

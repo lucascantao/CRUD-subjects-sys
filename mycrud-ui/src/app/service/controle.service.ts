@@ -19,11 +19,11 @@ export class ControleService {
     return this.http.get<ControleDTO>(`${this.domain}${this.URL}`, {params: new HttpParams().set('id', id)});
   }
 
-  getListControle(ano: string, page: number): Observable<any> {
+  getListControle(category: string, page: number): Observable<any> {
 
-    const options = { params: new HttpParams().set('ano', ano).set('page', page)};
+    const options = { params: new HttpParams().set('category', category).set('page', page)};
 
-    return this.http.get<any>(`${this.domain}${this.URL}/ano`, options);
+    return this.http.get<any>(`${this.domain}${this.URL}/category`, options);
   }
 
   addControle(controle: Controle) {

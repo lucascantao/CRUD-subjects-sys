@@ -17,7 +17,7 @@ import { ControleDTO } from '../../dto/controle.dto';
 })
 export class SearchComponent {
 
-  ANO = new Date().getFullYear().toString();
+  _category = ''
   page = 0;
   last = false;
   first = true;
@@ -29,8 +29,8 @@ export class SearchComponent {
 
   constructor(private controleService:ControleService, private router:Router) {}
 
-  setAno(ano: string) {
-    this.ANO = ano
+  setCategory(cat: string) {
+    this._category = cat
   }
 
   setPage(page: number) {
@@ -39,23 +39,23 @@ export class SearchComponent {
 
   nextPage() {
     if(this.page < this.pages - 1){
-      this.fetch(this.ANO, this.page + 1)
+      this.fetch(this._category, this.page + 1)
     }
   }
 
   previousPage() {
     if(this.page > 0){
-      this.fetch(this.ANO, this.page - 1)
+      this.fetch(this._category, this.page - 1)
     }
   }
 
   onSubmit() {
-    this.fetch(this.ANO, 0)
+    this.fetch(this._category, 0)
   }
 
-  fetch(ano:string, page:number) {
+  fetch(cat:string, page:number) {
     this.controles = []
-    this.controleService.getListControle(ano, page).subscribe({
+    this.controleService.getListControle(cat, page).subscribe({
       next: controles => {
         this.controles = this.formatControle(controles.content)
         this.pages = controles.totalPages
@@ -77,8 +77,6 @@ export class SearchComponent {
         controle.assunto = "SEM ASSUNTO"
       }
       controle.data = this.formatDateString(controle.data)
-      controle.inicio = this.formatDateString(controle.inicio!)
-      controle.termino = this.formatDateString(controle.termino!)
       return controle;
     })
   }

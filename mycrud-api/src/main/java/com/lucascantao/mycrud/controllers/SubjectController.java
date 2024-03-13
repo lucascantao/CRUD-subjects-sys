@@ -20,9 +20,9 @@ public class SubjectController {
         return ResponseEntity.ok().body(service.find(id));
     }
 
-    @GetMapping("/ano")
-    public ResponseEntity<Page<SubjectModel>> getListAno(@RequestParam String ano, int page){
-        return ResponseEntity.ok(service.getListAno(ano, page));
+    @GetMapping("/category")
+    public ResponseEntity<Page<SubjectModel>> getListCategory(@RequestParam String category, int page){
+        return ResponseEntity.ok(service.getListCategory(category, page));
     }
 
     @PostMapping()

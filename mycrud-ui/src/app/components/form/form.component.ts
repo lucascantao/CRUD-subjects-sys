@@ -30,14 +30,10 @@ export class FormComponent implements OnInit{
   
   controleForm = this.fb.group( {
     data: this.date,
-    inicio: '',
-    termino: '',
-    ano: new Date().getFullYear().toString(),
     assunto: ['', Validators.required],
-    destino: '',
+    category: ['', Validators.required],
     nomeUsuario: 'no_value' ,
-    processoDoc: ['', Validators.required],
-    observacoes: '',
+    description: '',
   })
 
   sent = false
@@ -53,15 +49,10 @@ export class FormComponent implements OnInit{
 
     const controle: Controle = {
       data: this.controleForm.value.data!,
-      inicio: this.controleForm.value.inicio!,
-      termino: this.controleForm.value.termino!,
-      ano: this.controleForm.value.ano!,
       assunto: this.controleForm.value.assunto!,
-      destino: this.controleForm.value.destino!,
+      category: this.controleForm.value.category!,
       nomeUsuario: this.controleForm.value.nomeUsuario!,
-      portaria: '',
-      processoDoc: this.controleForm.value.processoDoc!,
-      observacoes: this.controleForm.value.observacoes!,
+      description: this.controleForm.value.description!,
     }
     
     if(this.controleForm.status==='VALID'){

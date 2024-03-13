@@ -19,21 +19,13 @@ public class SubjectModel {
     @Column(name = "data")
     private LocalDate data;
 
-    @Column(name = "ano")
-    private String ano;
-
     @Column(name = "nome_usuario")
     private String nomeUsuario;
 
-    @Column(name="destino")
-    private String destino;
-
-    @Column(name="processo_doc")
-    private String processoDoc;
+    private String category;
 
     @Column(name = "assunto")
     private String assunto;
 
-    @Column(name = "observacoes")
-    private String observacoes;
+    private String description;
 }

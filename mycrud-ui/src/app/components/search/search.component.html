@@ -6,7 +6,7 @@
         <label class="block text-gray-700 text-sm mb-2">Buscar por Ano</label>
         <div class="flex">
             <div class="mb-4 mr-2">
-                <input #searchBox id="searchBox" (input)="setAno(searchBox.value)" type="number" [value]="ANO" class="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" formControlName="data">
+                <input #searchBox id="searchBox" (input)="setCategory(searchBox.value)" type="text" [value]="_category" class="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" formControlName="data">
             </div>
     
             <div>
